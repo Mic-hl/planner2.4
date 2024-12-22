@@ -1,0 +1,5 @@
+@use '../abstracts/variables';
+
+form {
+    color: variables.$color-text-element;
+}
