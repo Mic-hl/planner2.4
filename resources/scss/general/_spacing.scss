@@ -1,0 +1,15 @@
+@use '../abstracts/variables';
+
+body,
+h1,
+h2,
+h3,
+h4,
+p {
+    margin: 0;
+}
+
+.content-wrapper {
+    padding-left: variables.$spacer-md;
+    padding-right: variables.$spacer-md;
+}

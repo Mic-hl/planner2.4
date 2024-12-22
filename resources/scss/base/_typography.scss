@@ -1,0 +1,21 @@
+@use '../abstracts/variables';
+
+body {
+    font-family: variables.$font-family;
+}
+
+h1 {
+    font-size: variables.$font-size-big;
+}
+
+h2 {
+    font-size: variables.$font-size-xxl;
+}
+
+h3 {
+    font-size: variables.$font-size-xl;
+}
+
+h4 {
+    font-size: variables.$font-size-lg;
+}

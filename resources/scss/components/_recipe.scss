@@ -1,5 +1,18 @@
 @use '../abstracts/mixins';
+@use '../abstracts/variables';
 
 .recipe {
     @include mixins.border();
+    @include mixins.flex(stretch, space-between, column);
+    background: variables.$color-background-element;
+    color: variables.$color-text-element;
+    padding: variables.$spacer-md;
+}
+
+.recipe-head {
+    @include mixins.flex(stretch, space-between, row, wrap);
+}
+
+.recipe-title {
+    width: 100%;
 }

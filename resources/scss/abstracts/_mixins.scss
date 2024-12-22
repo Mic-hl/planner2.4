@@ -5,3 +5,16 @@
     border: variables.$border-width solid variables.$border-color;
     border-radius: variables.$border-radius;
 }
+
+// Make the element a flexbox
+@mixin flex($align: stretch, $justify: flex-start, $direction: row, $wrap: nowrap, $gap: null) {
+    align-items: $align;
+    display: flex;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+    justify-content: $justify;
+
+    @if $gap != null {
+        gap: $gap;
+    }
+}

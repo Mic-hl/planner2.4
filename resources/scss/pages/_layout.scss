@@ -1,0 +1,11 @@
+@use '../abstracts/variables';
+
+body {
+    background: variables.$color-background-page;
+    color: variables.$color-text-page;
+}
+
+a {
+    color: variables.$color-text-page;
+    text-decoration: none;
+}

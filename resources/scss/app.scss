@@ -1,5 +1,14 @@
 // Base
 @use './base/reset';
+@use './base/typography';
 
 // Components
 @use './components/recipe';
+
+// General
+@use './general/lists';
+@use './general/spacing';
+
+// Pages
+@use './pages/layout';
+@use './pages/recipes';

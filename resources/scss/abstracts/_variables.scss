@@ -2,9 +2,24 @@
 $color-primary: #d1ba22;
 $color-secondary: #4eb763;
 $color-danger: #a92311;
-$color-text: #000000;
+
+$color-text-page: #ffffff;
+$color-background-page: #111827;
+$color-text-element: #000000;
+$color-background-element: #e1b962;
+
+// Fonts
+$font-family: Figtree, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-size-md: 1rem;
+$font-size-lg: 1.3rem;
+$font-size-xl: 1.5rem;
+$font-size-xxl: 2rem;
+$font-size-big: 2.5rem;
+
+// Spacers
+$spacer-md: $font-size-md;
 
 // Borders
-$border-color: $color-text;
+$border-color: $color-text-page;
 $border-radius: 5px;
 $border-width: 3px;

@@ -1,0 +1,9 @@
+@use '../abstracts/mixins';
+
+.recipe-list {
+    @include mixins.flex(stretch, flex-start, row, wrap, 1em);
+
+    > li {
+        width: 100%;
+    }
+}
