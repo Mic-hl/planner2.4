@@ -25,6 +25,8 @@ import { Head } from '@inertiajs/vue3';
                         difficulty="Medium"
                         :time="30"
                     />
+                </li>
+                <li>
                     <Recipe
                         title="Pancakes"
                         :ingredients="['Milk', 'Flour', 'Eggs', 'Butter']"
@@ -32,6 +34,8 @@ import { Head } from '@inertiajs/vue3';
                         difficulty="Easy"
                         :time="10"
                     />
+                </li>
+                <li>
                     <Recipe
                         title="Gulasch"
                         :ingredients="['Meat', 'Onions', 'Broth', 'Tomato paste', 'Paprika powder', 'Butter', 'Thyme', 'Majoran', 'Salt', 'Pepper']"
