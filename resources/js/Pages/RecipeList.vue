@@ -12,12 +12,9 @@ defineProps(['recipes']);
 
     <AuthenticatedLayout>
         <template #header>
-            <h2
-                class="text-xl font-semibold leading-tight"
-            >
-                Recipes
-            </h2>
+            <h2>Recipes</h2>
         </template>
+
         <div class="content-wrapper">
             <ul class="recipe-list">
                 <li v-for="recipe in recipes" :key="recipe.id">

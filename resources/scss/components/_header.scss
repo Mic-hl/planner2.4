@@ -1,3 +1,4 @@
+@use '../abstracts/mixins';
 @use '../abstracts/variables';
 
 .page-info {
@@ -7,4 +8,14 @@
 
 .page-info h2 {
     color: variables.$color-text-page;
+    font-weight: variables.$font-weight-semibold;
+    font-size: variables.$font-size-xl;
+}
+
+.page-info {
+    .info-wrapper {
+        padding-bottom: calc(variables.$spacer-md * 1.5);
+        padding-top: calc(variables.$spacer-md * 1.5);
+        @include mixins.spacing();
+    }
 }

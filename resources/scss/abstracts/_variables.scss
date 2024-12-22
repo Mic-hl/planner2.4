@@ -23,6 +23,11 @@ $font-weight-semibold: 600;
 // Spacers
 $spacer-md: $font-size-md;
 $spacer-lg: calc($font-size-md * 2);
+$width-standard: 80rem;
+
+// Screen sizes
+$screen-md: 640px;
+$screen-lg: 1024px;
 
 // Borders
 $border-color: $color-text-page;

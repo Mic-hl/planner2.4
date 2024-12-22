@@ -12,37 +12,36 @@ defineProps(['recipe']);
 
     <AuthenticatedLayout>
         <template #header>
-            <h2
-                class="text-xl font-semibold leading-tight"
-            >
-                {{ recipe.title }}
-            </h2>
+            <h2>{{ recipe.title }}</h2>
         </template>
-        <div class="recipe">
-            <div class="recipe-head">
-                <h2 class="recipe-title">
-                    {{ recipe.title }}
-                </h2>
-                <div class="recipe-difficulty">
-                    {{ recipe.difficulty }}
+
+        <div class="content-wrapper">
+            <div class="recipe">
+                <div class="recipe-head">
+                    <h2 class="recipe-title">
+                        {{ recipe.title }}
+                    </h2>
+                    <div class="recipe-difficulty">
+                        {{ recipe.difficulty }}
+                    </div>
+                    <div class="recipe-time">
+                        {{ recipe.time }} min
+                    </div>
                 </div>
-                <div class="recipe-time">
-                    {{ recipe.time }} min
+                <ul class="recipe-ingredients">
+                    <li v-for="ingredient in recipe.ingredients" :key="ingredient">{{ ingredient }}</li>
+                </ul>
+                <div class="recipe-preparation">
+                    {{ recipe.preparation }}
                 </div>
-            </div>
-            <ul class="recipe-ingredients">
-                <li v-for="ingredient in recipe.ingredients" :key="ingredient">{{ ingredient }}</li>
-            </ul>
-            <div class="recipe-preparation">
-                {{ recipe.preparation }}
-            </div>
-            <div class="recipe-btns">
-                <Link
-                    :href="`/recipes`"
-                    class="button-secondary"
-                >
-                    back
-                </Link>
+                <div class="recipe-btns">
+                    <Link
+                        :href="`/recipes`"
+                        class="button-secondary"
+                    >
+                        back
+                    </Link>
+                </div>
             </div>
         </div>
     </AuthenticatedLayout>

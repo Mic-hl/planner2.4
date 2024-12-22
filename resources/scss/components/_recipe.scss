@@ -8,6 +8,7 @@
     background: variables.$color-background-element;
     color: variables.$color-text-element;
     padding: variables.$spacer-md;
+    @include mixins.spacing();
 }
 
 .recipe-head {
