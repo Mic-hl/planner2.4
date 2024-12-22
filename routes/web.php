@@ -21,8 +21,7 @@ Route::middleware(['auth','verified'])->group(function () {
         return Inertia::render('Dashboard');
     })->name('dashboard');
 
-    Route::get('/recipes', [RecipeController::class, 'index'])->name('recipes.index');
-    Route::get('/recipes/{recipe}', [RecipeController::class, 'show'])->name('recipes.show');
+    Route::resource('recipes', RecipeController::class);
 });
 
 Route::middleware('auth')->group(function () {
