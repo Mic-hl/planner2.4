@@ -34,11 +34,8 @@ defineProps(['recipe']);
                     {{ recipe.preparation }}
                 </div>
                 <div class="recipe-btns">
-                    <Link
-                        :href="`/recipes`"
-                        class="button-secondary"
-                    >
-                        back
+                    <Link :href="`/recipes`" class="button-secondary">
+                        exit
                     </Link>
                 </div>
             </div>
