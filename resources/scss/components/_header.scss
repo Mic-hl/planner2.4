@@ -1,0 +1,10 @@
+@use '../abstracts/variables';
+
+.page-info {
+    background: variables.$color-background-page-secondary;
+    border-bottom: variables.$border-width solid variables.$border-color;
+}
+
+.page-info h2 {
+    color: variables.$color-text-page;
+}

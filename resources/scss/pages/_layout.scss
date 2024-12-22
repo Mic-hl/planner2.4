@@ -9,3 +9,9 @@ a {
     color: variables.$color-text-page;
     text-decoration: none;
 }
+
+.application-wrapper {
+    background: variables.$color-background-page;
+    color: variables.$color-text-page;
+    min-height: 100vh;
+}

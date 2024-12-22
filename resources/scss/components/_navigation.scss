@@ -1,0 +1,14 @@
+@use '../abstracts/variables';
+
+.nav-menu {
+    background: variables.$color-background-page-secondary;
+    border-bottom: variables.$border-width solid variables.$border-color;
+    color: variables.$color-text-page;
+
+    svg {
+        display: flex;
+        fill: variables.$color-text-page;
+        height: 2.25rem;
+        width: auto;
+    }
+}

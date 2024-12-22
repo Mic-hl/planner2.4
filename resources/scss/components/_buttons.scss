@@ -1,0 +1,5 @@
+@use '../abstracts/variables';
+
+.dropdown-menu-button {
+    background-color: variables.$color-background-page-secondary;
+}
