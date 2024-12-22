@@ -1,14 +1,16 @@
 <template>
     <div class="recipe">
         <div class="recipe-head">
-            <h2 class="recipe-title">{{ title }}</h2>
-            <div class="recipe-difficulty">{{ difficulty }}</div>
-            <div class="recipe-time">{{ time }} min</div>
+            <h2 class="recipe-title">
+                {{ title }}
+            </h2>
+            <div class="recipe-difficulty">
+                {{ difficulty }}
+            </div>
+            <div class="recipe-time">
+                {{ time }} min
+            </div>
         </div>
-        <ul class="recipe-ingredients">
-            <li v-for="ingredient in ingredients" :key="ingredient">{{ ingredient }}</li>
-        </ul>
-        <div class="recipe-preparation">{{ preparation }}</div>
     </div>
 </template>
 

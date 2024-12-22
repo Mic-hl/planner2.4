@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RecipeController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -20,7 +21,8 @@ Route::middleware(['auth','verified'])->group(function () {
         return Inertia::render('Dashboard');
     })->name('dashboard');
 
-    Route::get('/recipes', [\App\Http\Controllers\RecipeController::class, 'index'])->name('recipes');
+    Route::get('/recipes', [RecipeController::class, 'index'])->name('recipes.index');
+    Route::get('/recipes/{recipe}', [RecipeController::class, 'show'])->name('recipes.show');
 });
 
 Route::middleware('auth')->group(function () {

@@ -38,8 +38,8 @@ const showingNavigationDropdown = ref(false);
                                     Dashboard
                                 </NavLink>
                                 <NavLink
-                                    :href="route('recipes')"
-                                    :active="route().current('recipes')"
+                                    :href="route('recipes.index')"
+                                    :active="route().current('recipes.index')"
                                 >
                                     Recipes
                                 </NavLink>
@@ -151,8 +151,8 @@ const showingNavigationDropdown = ref(false);
                             Dashboard
                         </ResponsiveNavLink>
                         <ResponsiveNavLink
-                            :href="route('recipes')"
-                            :active="route().current('recipes')"
+                            :href="route('recipes.index')"
+                            :active="route().current('recipes.index')"
                         >
                             Recipes
                         </ResponsiveNavLink>

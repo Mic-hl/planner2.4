@@ -12,8 +12,15 @@ class RecipeController extends Controller
     {
         $recipes = Recipe::all();
         
-        return Inertia::render('Recipes', [
+        return Inertia::render('RecipeList', [
             'recipes'=> $recipes,
+        ]);
+    }
+
+    public function show(Recipe $recipe)
+    {
+        return Inertia::render('RecipeDetail', [
+            'recipe' => $recipe
         ]);
     }
 }

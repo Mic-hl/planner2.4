@@ -17,7 +17,7 @@ return new class extends Migration
             $table->longText('ingredients');
             $table->longText('preparation');
             $table->string('difficulty');
-            $table->string('time');
+            $table->integer('time');
             $table->foreignId('user_id')->constrained('users');
             $table->timestamps();
         });
