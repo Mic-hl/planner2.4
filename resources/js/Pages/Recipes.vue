@@ -2,6 +2,8 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import Recipe from '../Components/Recipe.vue';
 import { Head } from '@inertiajs/vue3';
+
+defineProps(['recipes']);
 </script>
 
 <template>
@@ -17,6 +19,16 @@ import { Head } from '@inertiajs/vue3';
         </template>
         <div class="content-wrapper">
             <ul class="recipe-list">
+                <li v-for="recipe in recipes" :key="recipe.id">
+                    <Recipe
+                        :title="recipe.title"
+                        :ingredients="recipe.ingredients"
+                        :preparation="recipe.preparation"
+                        :difficulty="recipe.difficulty"
+                        :time="recipe.time"
+                    />
+                </li>
+                <!--
                 <li>
                     <Recipe
                         title="Spaghetti Carbonara"
@@ -44,6 +56,7 @@ import { Head } from '@inertiajs/vue3';
                         :time="120"
                     />
                 </li>
+                -->
             </ul>
         </div>
     </AuthenticatedLayout>

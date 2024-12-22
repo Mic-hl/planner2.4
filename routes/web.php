@@ -20,9 +20,7 @@ Route::middleware(['auth','verified'])->group(function () {
         return Inertia::render('Dashboard');
     })->name('dashboard');
 
-    Route::get('/recipes', function () {
-        return Inertia::render('Recipes');
-    })->name('recipes');
+    Route::get('/recipes', [\App\Http\Controllers\RecipeController::class, 'index'])->name('recipes');
 });
 
 Route::middleware('auth')->group(function () {
