@@ -1,9 +1,12 @@
 @use '../abstracts/mixins';
+@use '../abstracts/variables';
 
 .recipe-list {
     @include mixins.flex(stretch, flex-start, row, wrap, 1em);
+    margin-top: variables.$spacer-lg;
 
     > li {
-        width: 100%;
+        margin: 0 auto 2em auto;
+        width: clamp(200px, 100%, 350px);
     }
 }

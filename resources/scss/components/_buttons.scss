@@ -1,4 +1,13 @@
+@use '../abstracts/mixins';
 @use '../abstracts/variables';
+
+.button-primary {
+    @include mixins.button();
+}
+
+.button-secondary {
+    @include mixins.button(variables.$color-secondary);
+}
 
 .dropdown-menu-button {
     background-color: variables.$color-background-page-secondary;

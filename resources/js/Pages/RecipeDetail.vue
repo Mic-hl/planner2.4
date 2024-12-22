@@ -39,7 +39,7 @@ defineProps(['recipe']);
             <div class="recipe-btns">
                 <Link
                     :href="`/recipes`"
-                    class="recipe-link"
+                    class="button-secondary"
                 >
                     back
                 </Link>

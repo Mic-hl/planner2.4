@@ -11,14 +11,18 @@ $color-background-element: #e1b962;
 
 // Fonts
 $font-family: Figtree, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
 $font-size-md: 1rem;
 $font-size-lg: 1.3rem;
 $font-size-xl: 1.5rem;
 $font-size-xxl: 2rem;
 $font-size-big: 2.5rem;
 
+$font-weight-semibold: 600;
+
 // Spacers
 $spacer-md: $font-size-md;
+$spacer-lg: calc($font-size-md * 2);
 
 // Borders
 $border-color: $color-text-page;
