@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('recipes', function (Blueprint $table) {
             $table->id();
             $table->longText('title');
-            $table->longText('ingredients');
+            $table->json('ingredients');
             $table->longText('preparation');
             $table->string('difficulty');
             $table->integer('time');
-            $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

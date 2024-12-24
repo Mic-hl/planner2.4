@@ -15,6 +15,12 @@ defineProps(['recipes']);
             <h2>Recipes</h2>
         </template>
 
+        <template #interactionHeader>
+            <Link :href="`recipes/create`" class="button-secondary">
+                New Recipe
+            </Link>
+        </template>
+
         <div class="content-wrapper">
             <ul class="recipe-list">
                 <li v-for="recipe in recipes" :key="recipe.id">

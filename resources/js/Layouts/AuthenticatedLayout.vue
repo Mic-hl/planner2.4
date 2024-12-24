@@ -199,6 +199,13 @@ const showingNavigationDropdown = ref(false);
                 </div>
             </header>
 
+            <header
+                class="interaction-header"
+                v-if="$slots.interactionHeader"
+            >
+                <slot name="interactionHeader" />
+            </header>
+
             <!-- Page Content -->
             <main>
                 <slot />

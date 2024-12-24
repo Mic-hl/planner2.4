@@ -9,6 +9,10 @@
     @include mixins.button(variables.$color-secondary);
 }
 
+.button-danger {
+    @include mixins.button(variables.$color-danger);
+}
+
 .dropdown-menu-button {
     background-color: variables.$color-background-page-secondary;
 }
