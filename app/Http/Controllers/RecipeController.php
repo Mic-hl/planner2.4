@@ -13,14 +13,14 @@ class RecipeController extends Controller
     {
         $recipes = Recipe::all();
         
-        return Inertia::render('RecipeList', [
+        return Inertia::render('Recipe/Index', [
             'recipes'=> $recipes,
         ]);
     }
 
     public function create()
     {
-        return Inertia::render('RecipeCreate');
+        return Inertia::render('Recipe/Create');
     }
 
     public function store(Request $request)
@@ -44,7 +44,7 @@ class RecipeController extends Controller
 
     public function show(Recipe $recipe)
     {
-        return Inertia::render('RecipeDetail', [
+        return Inertia::render('Recipe/Show', [
             'recipe' => $recipe
         ]);
     }
