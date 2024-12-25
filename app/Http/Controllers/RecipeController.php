@@ -18,9 +18,13 @@ class RecipeController extends Controller
         ]);
     }
 
-    public function create()
+    public function create(Request $request)
     {
-        return Inertia::render('Recipe/Create');
+        $currentPage = $request->query('page', 1);
+
+        return Inertia::render('Recipe/Create', [
+            'page' => $currentPage,
+        ]);
     }
 
     public function store(Request $request)

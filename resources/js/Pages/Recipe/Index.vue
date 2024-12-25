@@ -15,7 +15,7 @@ defineProps(['recipes']);
         </template>
 
         <template #interactionHeader>
-            <Link :href="`recipes/create`" class="button-secondary">
+            <Link :href="`recipes/create?page=${recipes.current_page}`" class="button-secondary">
                 New Recipe
             </Link>
         </template>

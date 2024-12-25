@@ -1,6 +1,6 @@
 <script setup>
-import { ref } from 'vue';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
+import { defineProps } from 'vue';
 import { Head, Link, useForm } from '@inertiajs/vue3';
 
 // Define the form state using Inertia's useForm
@@ -31,6 +31,8 @@ const submitForm = () => {
         },
     });
 };
+
+defineProps(['recipe', 'page']);
 </script>
 
 <template>
@@ -95,7 +97,9 @@ const submitForm = () => {
                     </div>
                     <div class="controls">
                         <button type="submit" class="button-secondary">Add Recipe</button>
-                        <Link :href="`/recipes`" class="button-danger">Cancel</Link>
+                        <Link :href="`/recipes?page=${page}`" class="button-danger">
+                            Cancel
+                        </Link>
                     </div>
                 </form>
             </div>
