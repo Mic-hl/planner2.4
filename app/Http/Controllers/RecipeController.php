@@ -14,13 +14,13 @@ class RecipeController extends Controller
         $recipes = Recipe::paginate(15);
 
         return Inertia::render('Recipe/Index', [
-            'recipes'=> $recipes,
+            'recipes' => $recipes,
         ]);
     }
 
     public function create(Request $request)
     {
-        $currentPage = $request->query('page', 1);
+        $currentPage = $this->getCurrentPage($request);
 
         return Inertia::render('Recipe/Create', [
             'page' => $currentPage,
@@ -37,8 +37,7 @@ class RecipeController extends Controller
             'difficulty' => 'required|string|in:Easy,Medium,Hard',
             'time' => 'required|integer|min:1',
         ]);
-        
-        // Attach the authenticated user
+
         $validated['user_id'] = Auth::id();
 
         Recipe::create($validated);
@@ -48,31 +47,31 @@ class RecipeController extends Controller
 
     public function show(Recipe $recipe, Request $request)
     {
-        $currentPage = $request->query('page', 1);
-        
+        $currentPage = $this->getCurrentPage($request);
+
         return Inertia::render('Recipe/Show', [
             'recipe' => $recipe,
             'page' => $currentPage,
         ]);
     }
 
-    public function edit(Recipe $recipe)
-    {
-        //
-    }
-
-    public function update(Request $request, Recipe $recipe)
-    {
-        //
-    }
-
     public function destroy(Recipe $recipe, Request $request)
     {
-        $currentPage = $request->query('page', 1);
-        
+        $currentPage = $this->getCurrentPage($request);
         $recipe->delete();
 
         return redirect()->route('recipes.index', ['page' => $currentPage])
                          ->with('success', 'Recipe deleted successfully!');
+    }
+
+    private function getCurrentPage(Request $request)
+    {
+        $currentPage = $request->query('page');
+
+        if (!$currentPage) {
+            $currentPage = $request->input('page', 1);
+        }
+
+        return $currentPage;
     }
 }
