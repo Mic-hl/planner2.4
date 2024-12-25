@@ -62,10 +62,10 @@ const submitForm = () => {
                                 v-model="form.ingredients[index]"
                                 placeholder="Ingredient"
                             />
-                            <button type="button" @click="removeIngredient(index)" v-if="form.ingredients.length > 1">Remove</button>
+                            <button type="button" class="button-danger" @click="removeIngredient(index)" v-if="form.ingredients.length > 1">Remove</button>
                         </div>
                         <div class="ingredient-group">
-                            <button type="button" @click="addIngredient">Add Ingredient</button>
+                            <button type="button" class="button-secondary" @click="addIngredient">Add Ingredient</button>
                         </div>
                     </div>
                     <div class="preparation-row">
