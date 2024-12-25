@@ -11,8 +11,8 @@ class RecipeController extends Controller
 {
     public function index()
     {
-        $recipes = Recipe::paginate(10);
-        
+        $recipes = Recipe::paginate(15);
+
         return Inertia::render('Recipe/Index', [
             'recipes'=> $recipes,
         ]);
@@ -42,10 +42,23 @@ class RecipeController extends Controller
         return redirect()->route('recipes.index')->with('success', 'Recipe created successfully!');
     }
 
-    public function show(Recipe $recipe)
+    public function show(Recipe $recipe, Request $request)
     {
+        $currentPage = $request->query('page', 1);
+        
         return Inertia::render('Recipe/Show', [
-            'recipe' => $recipe
+            'recipe' => $recipe,
+            'page' => $currentPage,
         ]);
+    }
+
+    public function destroy(Recipe $recipe, Request $request)
+    {
+        $recipe->delete();
+
+        $currentPage = $request->query('page', 1);
+
+        return redirect()->route('recipes.index', ['page' => $currentPage])
+                         ->with('success', 'Recipe deleted successfully!');
     }
 }

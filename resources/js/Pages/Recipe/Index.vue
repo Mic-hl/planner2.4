@@ -1,8 +1,7 @@
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import Recipe from '../../Components/Recipe.vue';
-import { Head } from '@inertiajs/vue3';
-import { Link } from '@inertiajs/vue3';
+import { Head, Link } from '@inertiajs/vue3';
 
 defineProps(['recipes']);
 </script>
@@ -25,7 +24,7 @@ defineProps(['recipes']);
             <ul class="recipe-list">
                 <li v-for="recipe in recipes.data" :key="recipe.id">
                     <Link
-                        :href="`recipes/${recipe.id}`"
+                        :href="`recipes/${recipe.id}?page=${recipes.current_page}`"
                         class="recipe-link"
                     >
                         <Recipe

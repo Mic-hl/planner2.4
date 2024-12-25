@@ -1,9 +1,9 @@
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
-import { Head } from '@inertiajs/vue3';
-import { Link } from '@inertiajs/vue3';
+import { defineProps } from 'vue';
+import { Head, Link } from '@inertiajs/vue3';
 
-defineProps(['recipe']);
+defineProps(['recipe', 'page']);
 </script>
 
 <template>
@@ -34,9 +34,12 @@ defineProps(['recipe']);
                     {{ recipe.preparation }}
                 </div>
                 <div class="recipe-btns">
-                    <Link :href="`/recipes`" class="button-secondary">
-                        exit
+                    <Link :href="`/recipes?page=${page}`" class="button-secondary">
+                        back
                     </Link>
+                    <button class="button-danger">
+                        delete
+                    </button>
                 </div>
             </div>
         </div>

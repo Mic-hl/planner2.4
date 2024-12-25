@@ -38,6 +38,10 @@
                 type: Number,
                 required: true,
             },
+            page: {
+                type: Number,
+                required: false,
+            }
         },
     };
 </script>
