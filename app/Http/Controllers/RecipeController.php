@@ -56,11 +56,21 @@ class RecipeController extends Controller
         ]);
     }
 
+    public function edit(Recipe $recipe)
+    {
+        //
+    }
+
+    public function update(Request $request, Recipe $recipe)
+    {
+        //
+    }
+
     public function destroy(Recipe $recipe, Request $request)
     {
-        $recipe->delete();
-
         $currentPage = $request->query('page', 1);
+        
+        $recipe->delete();
 
         return redirect()->route('recipes.index', ['page' => $currentPage])
                          ->with('success', 'Recipe deleted successfully!');

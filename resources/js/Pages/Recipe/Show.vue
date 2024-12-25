@@ -1,7 +1,13 @@
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { defineProps } from 'vue';
-import { Head, Link } from '@inertiajs/vue3';
+import { Head, Link, router } from '@inertiajs/vue3';
+
+function deleteRecipe(recipeId) {
+    if (confirm('Are you sure you want to delete this recipe?')) {
+        router.delete(`/recipes/${recipeId}`);
+    }
+}
 
 defineProps(['recipe', 'page']);
 </script>
@@ -37,7 +43,7 @@ defineProps(['recipe', 'page']);
                     <Link :href="`/recipes?page=${page}`" class="button-secondary">
                         back
                     </Link>
-                    <button class="button-danger">
+                    <button @click="deleteRecipe(recipe.id)" class="button-danger">
                         delete
                     </button>
                 </div>
