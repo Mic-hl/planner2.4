@@ -7,7 +7,7 @@
     border-bottom: variables.$border-width solid variables.$border-color;
     color: variables.$color-text-page;
 
-    svg {
+    .logo svg {
         display: flex;
         fill: variables.$color-text-page;
         height: calc(variables.$font-size-md * 2.25);
@@ -117,5 +117,43 @@
         &:hover {
             color: color.scale(#ffffff, $lightness: -21%);
         }
+    }
+}
+
+.dropdown-logo {
+    height: 1rem;
+    margin-inline-end: -0.125rem;
+    margin-inline-start: 0.5rem;
+    width: 1rem;
+}
+
+.hamburger-wrapper {
+    @include mixins.flex(center);
+    margin-inline-end: -0.5rem;
+
+    @media screen and (min-width: variables.$screen-md) {
+        display: none;
+    }
+}
+
+.hamburger-wrapper button {
+    @include mixins.transition();
+    align-items: center;
+    border-radius: variables.$border-radius-std;
+    display: inline-flex;
+    justify-content: center;
+    padding: calc(variables.$spacer-md * 0.5);
+
+    svg {
+        height: calc(variables.$font-size-md * 1.5);
+        width: calc(variables.$font-size-md * 1.5);
+
+        path.active {
+            display: inline-flex;
+        }
+    }
+
+    &:hover {
+        background-color: color.scale(variables.$color-background-page-secondary, $lightness: -21%);
     }
 }
