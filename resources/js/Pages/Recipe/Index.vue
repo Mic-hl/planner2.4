@@ -23,7 +23,7 @@ defineProps(['recipes']);
 
         <div class="content-wrapper">
             <ul class="recipe-list">
-                <li v-for="recipe in recipes" :key="recipe.id">
+                <li v-for="recipe in recipes.data" :key="recipe.id">
                     <Link
                         :href="`recipes/${recipe.id}`"
                         class="recipe-link"
@@ -39,5 +39,17 @@ defineProps(['recipes']);
                 </li>
             </ul>
         </div>
+
+        <div class="pagination">
+            <Link
+                v-for="(link, index) in recipes.links"
+                :key="index"
+                :href="link.url || '#'"
+                v-html="link.label"
+                :class="{ 'pagination-link button-primary': true, 'active button-secondary': link.active }"
+                :aria-disabled="!link.url"
+            ></Link>
+        </div>
+
     </AuthenticatedLayout>
 </template>

@@ -1,0 +1,20 @@
+@use '../abstracts/mixins';
+@use '../abstracts/variables';
+
+.pagination {
+    @include mixins.flex(center, space-between, row, wrap, variables.$spacer-md);
+}
+
+.pagination-link {
+    @include mixins.flex(center, center);
+    aspect-ratio: 1;
+    min-width: unset;
+    padding: 0;
+    width: variables.$spacer-lg;
+
+    &:first-of-type,
+    &:last-of-type {
+        aspect-ratio: unset;
+        width: calc(variables.$spacer-lg * 3);
+    }
+}
