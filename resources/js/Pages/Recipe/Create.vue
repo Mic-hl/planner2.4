@@ -43,9 +43,9 @@ const submitForm = () => {
 
         <div class="content-wrapper">
             <div class="recipe">
-                <form @submit.prevent="submitForm" class="form">
+                <form @submit.prevent="submitForm" class="add-recipe">
                     <h2>Create Recipe</h2>
-                    <div>
+                    <div class="title-row">
                         <label for="title">Title</label>
                         <input
                             type="text"
@@ -54,7 +54,7 @@ const submitForm = () => {
                             placeholder="Recipe title"
                         />
                     </div>
-                    <div>
+                    <div class="ingredients-row">
                         <label>Ingredients</label>
                         <div v-for="(ingredient, index) in form.ingredients" :key="index" class="ingredient-group">
                             <input
@@ -64,9 +64,11 @@ const submitForm = () => {
                             />
                             <button type="button" @click="removeIngredient(index)" v-if="form.ingredients.length > 1">Remove</button>
                         </div>
-                        <button type="button" @click="addIngredient">Add Ingredient</button>
+                        <div class="ingredient-group">
+                            <button type="button" @click="addIngredient">Add Ingredient</button>
+                        </div>
                     </div>
-                    <div>
+                    <div class="preparation-row">
                         <label for="preparation">Preparation</label>
                         <textarea
                             id="preparation"
@@ -74,7 +76,7 @@ const submitForm = () => {
                             placeholder="Step-by-step preparation"
                         ></textarea>
                     </div>
-                    <div>
+                    <div class="difficulty-row">
                         <label for="difficulty">Difficulty</label>
                         <select id="difficulty" v-model="form.difficulty">
                             <option>Easy</option>
@@ -82,7 +84,7 @@ const submitForm = () => {
                             <option>Hard</option>
                         </select>
                     </div>
-                    <div>
+                    <div class="time-row">
                         <label for="time">Time (minutes)</label>
                         <input
                             type="number"

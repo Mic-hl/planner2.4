@@ -1,5 +1,43 @@
+@use '../abstracts/mixins';
 @use '../abstracts/variables';
 
 form {
     color: variables.$color-text-element;
+
+    input[type=text],
+    input[type=number],
+    textarea {
+        background: none;
+        border: none;
+        border-bottom: 3px solid variables.$color-text-element;
+        margin-inline: auto;
+
+        &:focus {
+            outline: 1px solid variables.$color-text-element;
+            outline-offset: 0px;
+        }
+    }
+}
+
+form.add-recipe {
+    > div {
+        @include mixins.flex(stretch, flex-start, row, wrap, variables.$spacer-md);
+        margin-bottom: calc(variables.$spacer-lg * 2);
+        margin-top: calc(variables.$spacer-lg * 2);
+
+        > label {
+            font-size: variables.$font-size-lg;
+            font-weight: variables.$font-weight-lightbold;
+            width: 100%;
+
+            & + * {
+                max-width: 50rem;
+                width: 100%;
+            }
+        }
+
+        .ingredient-group {
+            width: 100%;
+        }
+    }
 }
