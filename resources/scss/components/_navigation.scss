@@ -1,3 +1,5 @@
+@use 'sass:color';
+@use '../abstracts/mixins';
 @use '../abstracts/variables';
 
 .nav-menu {
@@ -8,7 +10,112 @@
     svg {
         display: flex;
         fill: variables.$color-text-page;
-        height: 2.25rem;
+        height: calc(variables.$font-size-md * 2.25);
         width: auto;
+    }
+}
+
+.nav-wrapper {
+    @include mixins.spacing();
+}
+
+.nav-content {
+    @include mixins.flex(stretch, space-between);
+    height: calc(variables.$font-size-md * 4);
+}
+
+.nav-big {
+    @include mixins.flex();
+
+    .logo {
+        @include mixins.flex(center);
+        flex-shrink: 0;
+    }
+
+    .nav-links {
+        display: none;
+
+        a {
+            @include mixins.transition();
+            align-items: center;
+            border-bottom-width: variables.$border-width;
+            color: #ffffff;
+            display: inline-flex;
+            font-size: variables.$font-size-small;
+            font-weight: variables.$font-weight-lightbold;
+            line-height: calc(variables.$font-size-md * 1.25);
+            padding-left: variables.$font-size-xs;
+            padding-right: variables.$font-size-xs;
+            padding-top: variables.$font-size-xs;
+
+            &.active-link {
+                border-color: variables.$color-primary;
+                color: color.scale(#ffffff, $lightness: -21%);
+
+                &:hover {
+                    cursor: default;
+                }
+            }
+
+            &.inactive-link {
+                border-color: transparent;
+
+                &:hover {
+                    border-color: #ffffff;
+                }
+            }
+        }
+
+        @media screen and (min-width: variables.$screen-md) {
+            @include mixins.flex(stretch, flex-start, row, nowrap, variables.$spacer-lg);
+            margin-bottom: -1px;
+            margin-inline-start: variables.$font-size-big;
+            margin-left: variables.$spacer-lg;
+            margin-top: -1px;
+        }
+    }
+}
+
+.nav-small {
+    display: none;
+
+    @media screen and (min-width: variables.$screen-md) {
+        @include mixins.flex(center);
+        margin-inline-start: variables.$font-size-xl;
+    }
+}
+
+.dropdown-wrapper {
+    margin-inline-start: calc(variables.$font-size-md * 0.75);
+    position: relative;
+
+    > div {
+        position: relative;
+    }
+}
+
+.dropdown-button {
+    border-radius: 0.375rem;
+    display: inline-flex;
+
+    > button {
+        @include mixins.transition();
+        align-items: center;
+        background: variables.$color-background-page-secondary;
+        border-color: transparent;
+        border-radius: 0.375rem;
+        border-width: 1px;
+        display: inline-flex;
+        font-size: variables.$font-size-small;
+        font-weight: variables.$font-weight-lightbold;
+        line-height: variables.$font-size-md;
+        padding-bottom: 0.5rem;
+        padding-left: 0.75rem;
+        padding-right: 0.5rem;
+        padding-top: 0.5rem;
+
+        &:hover {
+            color: color.scale(#ffffff, $lightness: -21%);
+        }
     }
 }

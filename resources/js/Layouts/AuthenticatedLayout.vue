@@ -17,20 +17,18 @@ const showingNavigationDropdown = ref(false);
                 class="nav-menu"
             >
                 <!-- Primary Navigation Menu -->
-                <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                    <div class="flex h-16 justify-between">
-                        <div class="flex">
+                <div class="nav-wrapper">
+                    <div class="nav-content">
+                        <div class="nav-big">
                             <!-- Logo -->
-                            <div class="flex shrink-0 items-center">
+                            <div class="logo">
                                 <Link :href="route('dashboard')">
                                     <ApplicationLogo />
                                 </Link>
                             </div>
 
                             <!-- Navigation Links -->
-                            <div
-                                class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex"
-                            >
+                            <div class="nav-links">
                                 <NavLink
                                     :href="route('dashboard')"
                                     :active="route().current('dashboard')"
@@ -46,16 +44,13 @@ const showingNavigationDropdown = ref(false);
                             </div>
                         </div>
 
-                        <div class="hidden sm:ms-6 sm:flex sm:items-center">
+                        <div class="nav-small">
                             <!-- Settings Dropdown -->
-                            <div class="relative ms-3">
+                            <div class="dropdown-wrapper">
                                 <Dropdown align="right" width="48">
                                     <template #trigger>
-                                        <span class="inline-flex rounded-md">
-                                            <button
-                                                type="button"
-                                                class="dropdown-menu-button inline-flex items-center rounded-md border border-transparent px-3 py-2 text-sm font-medium leading-4 text-gray-500 transition duration-150 ease-in-out hover:text-gray-700 focus:outline-none"
-                                            >
+                                        <span class="dropdown-button">
+                                            <button type="button">
                                                 {{ $page.props.auth.user.name }}
 
                                                 <svg
